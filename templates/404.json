@@ -3,9 +3,9 @@
   "layout": "custom_theme",
   "wrapper": "div#404_template",
   "sections": {
-    "template-404": {
-      "type": "page-404"
+    "template": {
+      "type": "template-404"
     }
   },
-  "order": ["template-404"]
+  "order": ["template"]
 }
