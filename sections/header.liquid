@@ -60,3 +60,20 @@
     dropdown.hidden = ! dropdown.hidden;
   });
 </script>
+
+{% schema %}
+  {
+    "name": "header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      }, {
+        "type": "text",
+        "id": "header_text",
+        "label": "Header Text",
+        "default": "Header Text"
+      }
+    ]
+  }
+{% endschema %}
