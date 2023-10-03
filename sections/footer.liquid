@@ -19,42 +19,27 @@
 
 {% schema %}
   {
-    "name": "Footer",
+    "name": "header",
     "settings": [
       {
+        "type": "header",
+        "content": "Header"
+      }, {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement Text",
+        "default": "Free shipping on orders over $100"
+      }, {
+        "type": "text",
+        "id": "announcement_link",
+        "label": "Announcement Link",
+        "default": "https://www.google.com"
+      }, {
         "type": "checkbox",
-        "id": "social-media-list",
-        "label": "Add Social Media",
-        "default": true,
-        "options": [
-          {
-            "value": "facebook",
-            "label": "Facebook"
-          },
-          {
-            "value": "twitter",
-            "label": "Twitter"
-          },
-          {
-            "value": "instagram",
-            "label": "Instagram"
-          },
-          {
-            "value": "pinterest",
-            "label": "Pinterest"
-          }, {
-            "value": "youtube",
-            "label": "YouTube"
-          }, {
-            "value": "vimeo",
-            "label": "Vimeo"
-          }, {
-            "value": "rss",
-            "label": "RSS"
-          }
-        ]
+        "id": "announcement",
+        "label": "Announcement",
+        "default": false
       }
-
     ]
   }
 {% endschema %}
