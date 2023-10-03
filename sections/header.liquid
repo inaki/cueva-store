@@ -1,0 +1,62 @@
+<div class="bg-white border-t border-b border-black flex justify-around items-center h-[70px]">
+  <div class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 uppercase border-r border-black">
+    <a
+      href="#"
+      id="options-menu"
+      aria-haspopup="true"
+      aria-expanded="true">Shop</a>
+  </div>
+  <div class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 border-r border-black uppercase">About</div>
+  <div class="flex-1 flex justify-center items-center text-black font-bold text-xl h-[70px] border-r border-black">
+    {% if shop.brand.logo != blank %}
+      <img
+        src="{{ shop.brand.logo | image_url }}"
+        alt="{{ shop.name | escape }}"
+        id="logo"
+        height="20"
+        width="100"
+        class="block mx-auto"
+        loading="eager">
+    {% else %}
+      <h1>{{ shop.name }}</h1>
+    {% endif %}
+  </div>
+
+  <div class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 border-r border-black uppercase">Search</div>
+  <div class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 uppercase">
+    <a href="{{ routes.cart_url }}">Bag</a>
+  </div>
+  <div
+    class="origin-top-right absolute top-8 w-1/5 mt-2 shadow-lg bg-white border border-black"
+    style="top: 31px; left: -1px;"
+    id="dropdown"
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby="options-menu"
+    hidden>
+    <div class="py-1" role="none">
+      {% for link in linklists.main-menu.links %}
+        {% if link.links %}
+          <ul class="dropdown-menu">
+            {% for sublink in link.links %}
+              <li>
+                <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const dropdown = document.getElementById('dropdown');
+  const optionsMenu = document.getElementById('options-menu');
+
+  optionsMenu.addEventListener('click', () => {
+    dropdown.hidden = ! dropdown.hidden;
+  });
+</script>

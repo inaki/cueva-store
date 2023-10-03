@@ -1,0 +1,36 @@
+# Node modules and Dependency directories
+
+node_modules/
+bower_components/
+
+# Development Config and Environment Files
+
+config.yml
+.env
+
+# Log files
+
+\*.log
+
+# Cache Files
+
+.sass-cache/
+\*.scssc
+
+# System Files
+
+.DS_Store
+Thumbs.db
+
+# Ignoring all JSON files (if needed)
+
+# \*.json
+
+# Ignoring all Markdown files (if needed)
+
+# \*.md
+
+# Package files
+
+package-lock.json
+package.json

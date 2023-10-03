@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
   <head>
     <title>{{ page_title }}</title>
     <meta charset="utf-8">
@@ -10,11 +11,25 @@
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
-    {{ 'application.js' | asset_url | script_tag }}
+    <script src="{{ 'application.js' | asset_url }}" async></script>
   </head>
-  <body>
-    <main role="main">
+
+  <body class="bg-gray-100 h-screen flex flex-col">
+    <!-- Use flex layout on the body to allow child elements to stretch -->
+    <header class="flex-shrink-0 h-[70px] bg-blue-500">
+      <!-- 10% of the viewport height and a color for visualization -->
+      {% section 'header' %}
+    </header>
+
+    <main role="main" class="flex-grow bg-green-500">
+      <!-- Flex-grow makes this element take up the remaining space -->
       {{ content_for_layout }}
     </main>
+
+    <footer class="flex-shrink-0 h-100 bg-red-500">
+      <!-- 10% of the viewport height and a color for visualization -->
+      {% section 'footer' %}
+    </footer>
   </body>
+
 </html>
