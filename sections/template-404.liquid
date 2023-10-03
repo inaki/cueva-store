@@ -1,1 +1,16 @@
-<h1>I am a 404 template, {{ settings.general['404'].title }}</h1>
+<h1>I am a 404 template, {{ section.settings.title }}</h1>
+
+
+{% schema %}
+  {
+    "name": "404",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "404"
+      }
+    ]
+  }
+{% endschema %}
