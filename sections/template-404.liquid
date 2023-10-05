@@ -1,5 +1,11 @@
-<h1>{{ section.settings.title }}</h1>
-<p>{{ section.settings.subheading }}</p>
+<div class="max-w-md">
+  <div class="text-5xl font-bold my-4">{{ section.settings.title }}</div>
+  <div class="my-4">
+    <div class="text-base md:text-xl leading-normal">
+      {{ section.settings.subheading }}
+    </div>
+  </div>
+</div>
 
 
 {% schema %}

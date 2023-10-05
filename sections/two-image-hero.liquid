@@ -1,0 +1,90 @@
+<section class="two-image-hero">
+
+  <div class="grid grid-cols-2 gap-4">
+
+    <div class="bg-center bg-cover" style="background-image: url('{{ section.settings.imageLeft | img_url: 'master' }}');">
+      <p class="py-2 px-4 bg-black bg-opacity-50 text-white hover:bg-opacity-75">
+        <a href="{{ section.settings.button_linkLeft }}" style="color: {{ section.settings.button_labelLeft_color }}">
+          {{ section.settings.button_labelLeft }}
+        </a>
+      </p>
+
+      <video
+        playsinline
+        webkit-playsinline
+        autoplay
+        muted
+        loop
+        class="w-full h-full">
+        <source src="{{ section.settings.videoLeft }}" type="video/mp4">
+      </video>
+    </div>
+
+
+    <div class="bg-center bg-cover hidden md:block" style="background-image: url('{{ section.settings.imageRight | img_url: 'master' }}');">
+      <p class="py-2 px-4 bg-black bg-opacity-50 text-white hover:bg-opacity-75">
+        <a href="{{ section.settings.button_linkRight }}" style="color: {{ section.settings.button_labelRight_color }}">
+          {{ section.settings.button_labelRight }}
+        </a>
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+{% schema %}
+  {
+    "name": "Two Image Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "imageLeft",
+        "label": "Left Image"
+      },
+      {
+        "type": "text",
+        "id": "videoLeft",
+        "label": "Left Video URL"
+      },
+      {
+        "type": "text",
+        "id": "button_labelLeft",
+        "label": "Left Button label"
+      },
+      {
+        "type": "color",
+        "id": "button_labelLeft_color",
+        "label": "Left Button Label Color",
+        "default": "#FFFFFF"
+      }, {
+        "type": "url",
+        "id": "button_linkLeft",
+        "label": "Left Button link"
+      }, {
+        "type": "image_picker",
+        "id": "imageRight",
+        "label": "Right Image"
+      }, {
+        "type": "text",
+        "id": "button_labelRight",
+        "label": "Right Button label"
+      }, {
+        "type": "color",
+        "id": "button_labelRight_color",
+        "label": "Right Button Label Color",
+        "default": "#FFFFFF"
+      }, {
+        "type": "url",
+        "id": "button_linkRight",
+        "label": "Right Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Two Image Hero",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
