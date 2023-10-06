@@ -3,7 +3,7 @@
   <div class="border-r border-black box-border overflow-hidden">
     <!-- Left Image -->
     <img
-      src="{{ section.settings.imageLeft | img_url }}"
+      src="{{ section.settings.imageLeft | img_url: '600x400'  }}"
       alt="Description of Image"
       width="600"
       height="400"
@@ -18,7 +18,7 @@
   <div class="box-border overflow-hidden">
     <!-- Right Image -->
     <img
-    src="{{ section.settings.imageRight | img_url }}"
+    src="{{ section.settings.imageRight | img_url: '600x400'  }}"
       alt="Description of Image"
       width="600"
       height="400"
