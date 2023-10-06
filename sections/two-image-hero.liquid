@@ -3,30 +3,30 @@
   <div class="border-r border-black box-border overflow-hidden">
     <!-- Left Image -->
     <img
-      src="{{ settings.imageLeft | asset_url }}"
+      src="{{ section.settings.imageLeft | img_url }}"
       alt="Description of Image"
       width="600"
       height="400"
-      loading="eager">
+      loading="lazy">
     <a
-      href="{{ settings.button_linkLeft }}"
+      href="{{ section.settings.button_linkLeft }}"
       style="color:{{ settings.button_labelLeft_color }}">
-      {{ settings.button_labelLeft }}</a>
+      {{ section.settings.button_labelLeft }}</a>
   </div>
 
   <!-- Right content -->
   <div class="box-border overflow-hidden">
     <!-- Right Image -->
     <img
-    src="{{ settings.imageRight | asset_url }}"
+    src="{{ section.settings.imageRight | img_url }}"
       alt="Description of Image"
       width="600"
       height="400"
       loading="lazy">
     <!-- Placeholder for Right Button (You can add button styling based on provided settings) -->
     <a
-      href="{{ settings.button_linkRight }}"
-      style="color:{{ settings.button_labelRight_color }}">{{ settings.button_labelRight }}</a>
+      href="{{ section.settings.button_linkRight }}"
+      style="color:{{ section.settings.button_labelRight_color }}">{{ section.settings.button_labelRight }}</a>
   </div>
 </section>
 
