@@ -1,0 +1,51 @@
+<div
+  class="announcement">
+  {% if section.settings.announcement %}
+    <div
+      class="announcement-bar bg-black text-white absolute w-full h-[40px] pt-2">
+      <a
+        href="{{ section.settings.announcement_link }}"
+        class="block text-center">{{ section.settings.announcement_text }}</a>
+    </div>
+  {% endif %}
+
+
+</div>
+
+
+
+<script>
+  const dropdown = document.getElementById('dropdown');
+  const optionsMenu = document.getElementById('options-menu');
+
+  optionsMenu.addEventListener('click', () => {
+    dropdown.hidden = ! dropdown.hidden;
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Announcement",
+    "settings": [
+      {
+        "type": "announcement",
+        "content": "Announcement"
+      }, {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement Text",
+        "default": "Free shipping on orders over $100"
+      }, {
+        "type": "text",
+        "id": "announcement_link",
+        "label": "Announcement Link",
+        "default": "https://www.google.com"
+      }, {
+        "type": "checkbox",
+        "id": "announcement",
+        "label": "Show Announcement",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

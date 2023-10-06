@@ -1,14 +1,18 @@
 <div>
-  <div class="bg-white border-t border-b border-black flex justify-around items-center h-[70px]">
-    <div class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 uppercase border-r border-black">
+  <div
+    class="bg-white border-t border-b border-black flex justify-around items-center h-[70px]">
+    <div
+      class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 uppercase border-r border-black">
       <a
         href="#"
         id="options-menu"
         aria-haspopup="true"
         aria-expanded="true">Shop</a>
     </div>
-    <div class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 border-r border-black uppercase">About</div>
-    <div class="flex-1 flex justify-center items-center text-black font-bold text-xl h-[70px] border-r border-black">
+    <div
+      class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 border-r border-black uppercase">About</div>
+    <div
+      class="flex-1 flex justify-center items-center text-black font-bold text-xl h-[70px] border-r border-black">
       {% if shop.brand.logo != blank %}
         <img
           src="{{ shop.brand.logo | image_url }}"
@@ -23,9 +27,12 @@
       {% endif %}
     </div>
 
-    <div class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 border-r border-black uppercase">Search</div>
-    <div class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 uppercase">
-      <a href="{{ routes.cart_url }}">Bag</a>
+    <div
+      class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 border-r border-black uppercase">Search</div>
+    <div
+      class="flex-1 text-center text-gray-700 cursor-pointer h-[70px] pt-6 uppercase">
+      <a
+        href="{{ routes.cart_url }}">Bag</a>
     </div>
     <div
       class="origin-top-right absolute top-8 w-1/5 mt-2 shadow-lg bg-white border border-black"
@@ -35,13 +42,17 @@
       aria-orientation="vertical"
       aria-labelledby="options-menu"
       hidden>
-      <div class="py-1" role="none">
+      <div
+        class="py-1"
+        role="none">
         {% for link in linklists.main-menu.links %}
           {% if link.links %}
-            <ul class="dropdown-menu">
+            <ul
+              class="dropdown-menu">
               {% for sublink in link.links %}
                 <li>
-                  <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                  <a
+                    href="{{ sublink.url }}">{{ sublink.title }}</a>
                 </li>
               {% endfor %}
             </ul>
@@ -51,14 +62,6 @@
       </div>
     </div>
   </div>
-
-  {% if section.settings.announcement %}
-    <div class="announcement-bar bg-black text-white absolute w-full h-[40px] pt-2">
-      <a href="{{ section.settings.announcement_link }}" class="block text-center">{{ section.settings.announcement_text }}</a>
-    </div>
-  {% endif %}
-
-
 </div>
 
 
@@ -71,30 +74,3 @@
     dropdown.hidden = ! dropdown.hidden;
   });
 </script>
-
-{% schema %}
-  {
-    "name": "header",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Header"
-      }, {
-        "type": "text",
-        "id": "announcement_text",
-        "label": "Announcement Text",
-        "default": "Free shipping on orders over $100"
-      }, {
-        "type": "text",
-        "id": "announcement_link",
-        "label": "Announcement Link",
-        "default": "https://www.google.com"
-      }, {
-        "type": "checkbox",
-        "id": "announcement",
-        "label": "Show Announcement",
-        "default": true
-      }
-    ]
-  }
-{% endschema %}
