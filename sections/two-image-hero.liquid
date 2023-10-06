@@ -1,34 +1,35 @@
 <section class="w-full h-[95vh] grid grid-cols-2 border-b border-black p-0 m-0">
   <!-- Left content -->
-  <div class="border-r border-black box-border overflow-hidden">
+  <div class="relative border-r border-black overflow-hidden h-full">
     <!-- Left Image -->
     <img
-      src="{{ section.settings.imageLeft | img_url: '600x400'  }}"
+      src="{{ section.settings.imageLeft | img_url: '600x400' }}"
       alt="Description of Image"
-      width="600"
-      height="400"
+      class="w-full h-full object-cover"
       loading="lazy">
     <a
       href="{{ section.settings.button_linkLeft }}"
-      style="color:{{ settings.button_labelLeft_color }}">
+      style="color:{{ settings.button_labelLeft_color }}"
+      class="absolute bottom-0 left-0">
       {{ section.settings.button_labelLeft }}</a>
   </div>
 
   <!-- Right content -->
-  <div class="box-border overflow-hidden">
+  <div class="relative box-border overflow-hidden h-full">
     <!-- Right Image -->
     <img
-    src="{{ section.settings.imageRight | img_url: '600x400'  }}"
+      src="{{ section.settings.imageRight | img_url: '600x400' }}"
       alt="Description of Image"
-      width="600"
-      height="400"
+      class="w-full h-full object-cover"
       loading="lazy">
-    <!-- Placeholder for Right Button (You can add button styling based on provided settings) -->
     <a
       href="{{ section.settings.button_linkRight }}"
-      style="color:{{ section.settings.button_labelRight_color }}">{{ section.settings.button_labelRight }}</a>
+      style="color:{{ section.settings.button_labelRight_color }}"
+      class="absolute bottom-0 left-0">
+      {{ section.settings.button_labelRight }}</a>
   </div>
 </section>
+
 
 {% schema %}
   {
