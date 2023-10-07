@@ -1,0 +1,128 @@
+<section class="w-full h-[50vh] grid grid-cols-5 border-b border-black p-0 m-0">
+  <!-- Image 1 -->
+  <div
+    class="relative border-r border-black overflow-hidden h-full">
+    <img
+      src="{{ section.settings.image1 | img_url: '600x400' }}"
+      alt="Description of Image 1"
+      class="w-full h-full object-cover"
+      loading="lazy">
+    <a
+      href="{{ section.settings.button_link1 }}"
+      style="color:{{ settings.button_label1_color }}"
+      class="absolute bottom-0 left-0">
+      {{ section.settings.button_label1 }}</a>
+  </div>
+
+  <!-- Image 2 -->
+  <div
+    class="relative border-r border-black overflow-hidden h-full">
+    <img
+      src="{{ section.settings.image2 | img_url: '600x400' }}"
+      alt="Description of Image 2"
+      class="w-full h-full object-cover"
+      loading="lazy">
+    <a
+      href="{{ section.settings.button_link2 }}"
+      style="color:{{ settings.button_label2_color }}"
+      class="absolute bottom-0 left-0">
+      {{ section.settings.button_label2 }}</a>
+  </div>
+
+  <!-- Image 3 -->
+  <div
+    class="relative border-r border-black overflow-hidden h-full">
+    <img
+      src="{{ section.settings.image3 | img_url: '600x400' }}"
+      alt="Description of Image 3"
+      class="w-full h-full object-cover"
+      loading="lazy">
+    <a
+      href="{{ section.settings.button_link3 }}"
+      style="color:{{ settings.button_label3_color }}"
+      class="absolute bottom-0 left-0">
+      {{ section.settings.button_label3 }}</a>
+  </div>
+
+  <!-- Image 4 -->
+  <div
+    class="relative border-r border-black overflow-hidden h-full">
+    <img
+      src="{{ section.settings.image4 | img_url: '600x400' }}"
+      alt="Description of Image 4"
+      class="w-full h-full object-cover"
+      loading="lazy">
+    <a
+      href="{{ section.settings.button_link4 }}"
+      style="color:{{ settings.button_label4_color }}"
+      class="absolute bottom-0 left-0">
+      {{ section.settings.button_label4 }}</a>
+  </div>
+
+  <!-- Image 5 -->
+  <div
+    class="relative overflow-hidden h-full">
+    <img
+      src="{{ section.settings.image5 | img_url: '600x400' }}"
+      alt="Description of Image 5"
+      class="w-full h-full object-cover"
+      loading="lazy">
+    <a
+      href="{{ section.settings.button_link5 }}"
+      style="color:{{ settings.button_label5_color }}"
+      class="absolute bottom-0 left-0">
+      {{ section.settings.button_label5 }}</a>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Product Highlight",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "imageLeft",
+        "label": "Left Image"
+      },
+      {
+        "type": "text",
+        "id": "button_labelLeft",
+        "label": "Left Button label"
+      },
+      {
+        "type": "color",
+        "id": "button_labelLeft_color",
+        "label": "Left Button Label Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "url",
+        "id": "button_linkLeft",
+        "label": "Left Button link"
+      }, {
+        "type": "image_picker",
+        "id": "imageRight",
+        "label": "Right Image"
+      }, {
+        "type": "text",
+        "id": "button_labelRight",
+        "label": "Right Button label"
+      }, {
+        "type": "color",
+        "id": "button_labelRight_color",
+        "label": "Right Button Label Color",
+        "default": "#FFFFFF"
+      }, {
+        "type": "url",
+        "id": "button_linkRight",
+        "label": "Right Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Two Image Hero",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
