@@ -8,9 +8,9 @@
       class="w-full h-full object-cover"
       loading="lazy">
     <a
-      href="{{ section.settings.button_linkLeft }}"
+      href="{{ section.settings.button_labelLeft_color }}"
       style="color:{{ settings.button_labelLeft_color }}"
-      class="absolute top-0 left-0 uppercase font-bold">
+      class="absolute top-0 left-0 uppercase font-bold pt-2 pl-4">
       {{ section.settings.button_labelLeft }}</a>
   </div>
 
@@ -25,7 +25,7 @@
     <a
       href="{{ section.settings.button_linkRight }}"
       style="color:{{ section.settings.button_labelRight_color }}"
-      class="absolute top-0 left-0 uppercase font-bold">
+      class="absolute top-0 left-0 uppercase font-bold pt-2 pl-4">
       {{ section.settings.button_labelRight }}</a>
   </div>
 </section>
@@ -49,7 +49,7 @@
         "type": "color",
         "id": "button_labelLeft_color",
         "label": "Left Button Label Color",
-        "default": "#847E7E"
+        "default": "#000"
       },
       {
         "type": "url",
@@ -67,7 +67,7 @@
         "type": "color",
         "id": "button_labelRight_color",
         "label": "Right Button Label Color",
-        "default": "#847E7E"
+        "default": "#000"
       }, {
         "type": "url",
         "id": "button_linkRight",
