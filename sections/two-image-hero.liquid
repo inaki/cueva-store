@@ -9,7 +9,7 @@
       loading="lazy">
     <a
       href="{{ section.settings.button_labelLeft_color }}"
-      style="color:{{ settings.button_labelLeft_color }}"
+      style="color:{{ section.settings.button_label_left_colo }}"
       class="absolute top-0 left-0 uppercase font-bold pt-2 pl-4">
       {{ section.settings.button_labelLeft }}</a>
   </div>
@@ -24,7 +24,7 @@
       loading="lazy">
     <a
       href="{{ section.settings.button_linkRight }}"
-      style="color:{{ section.settings.button_labelRight_color }}"
+      style="color:{{ section.settings.button_label_right_color }}"
       class="absolute top-0 left-0 uppercase font-bold pt-2 pl-4">
       {{ section.settings.button_labelRight }}</a>
   </div>
@@ -47,7 +47,7 @@
       },
       {
         "type": "color",
-        "id": "button_labelLeft_color",
+        "id": "button_label_left_color",
         "label": "Left Button Label Color",
         "default": "#000"
       },
@@ -65,7 +65,7 @@
         "label": "Right Button label"
       }, {
         "type": "color",
-        "id": "button_labelRight_color",
+        "id": "button_label_right_color",
         "label": "Right Button Label Color",
         "default": "#000"
       }, {
