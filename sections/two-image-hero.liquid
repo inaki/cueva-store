@@ -3,30 +3,31 @@
   <div class="relative border-r border-black overflow-hidden h-full">
     <!-- Left Image -->
     <img
-      src="{{ section.settings.imageLeft | img_url: '600x400' }}"
+      src="{{ section.settings.image_left | img_url: '600x400' }}"
       alt="Description of Image"
       class="w-full h-full object-cover"
       loading="lazy">
     <a
-      href="{{ section.settings.button_labelLeft_color }}"
+      href="{{ section.settings.button_label_left_color }}"
       style="color:{{ section.settings.button_label_left_colo }}"
       class="absolute top-0 left-0 uppercase font-bold pt-2 pl-4">
-      {{ section.settings.button_labelLeft }}</a>
+      {{ section.settings.button_label_left }} >
+    </a>
   </div>
 
   <!-- Right content -->
   <div class="relative box-border overflow-hidden h-full">
     <!-- Right Image -->
     <img
-      src="{{ section.settings.imageRight | img_url: '600x400' }}"
+      src="{{ section.settings.image_right | img_url: '600x400' }}"
       alt="Description of Image"
       class="w-full h-full object-cover"
       loading="lazy">
     <a
-      href="{{ section.settings.button_linkRight }}"
+      href="{{ section.settings.button_link_right }}"
       style="color:{{ section.settings.button_label_right_color }}"
       class="absolute top-0 left-0 uppercase font-bold pt-2 pl-4">
-      {{ section.settings.button_labelRight }}</a>
+      {{ section.settings.button_label_right }}</a>
   </div>
 </section>
 
@@ -37,12 +38,12 @@
     "settings": [
       {
         "type": "image_picker",
-        "id": "imageLeft",
+        "id": "image_left",
         "label": "Left Image"
       },
       {
         "type": "text",
-        "id": "button_labelLeft",
+        "id": "button_label_left",
         "label": "Left Button label"
       },
       {
@@ -53,15 +54,15 @@
       },
       {
         "type": "url",
-        "id": "button_linkLeft",
+        "id": "button_link_left",
         "label": "Left Button link"
       }, {
         "type": "image_picker",
-        "id": "imageRight",
+        "id": "image_right",
         "label": "Right Image"
       }, {
         "type": "text",
-        "id": "button_labelRight",
+        "id": "button_label_right",
         "label": "Right Button label"
       }, {
         "type": "color",
@@ -70,7 +71,7 @@
         "default": "#000"
       }, {
         "type": "url",
-        "id": "button_linkRight",
+        "id": "button_link_right",
         "label": "Right Button link"
       }
     ],
