@@ -1,22 +1,48 @@
-{% paginate collection.products by 2 %}
+{% paginate collection.products by 12 %}
   <h1>{{ collection.title }}</h1>
-  {% for product in collection.products %}
-    <div>
-      <a
-        href="{{ product.url | within: collection }}">{{ product.title }}</a>
-      {{ product.price | money }}
-      {% unless product.available %}<br><strong>sold out</strong>
-      {% endunless %}
-      <a
-        href="{{ product.url | within: collection }}">
-        <img
-          src="{{ product.featured_image.src | img_url: 'large' }}"
-          alt="{{ product.featured_image.alt | escape }}">
-      </a>
-    </div>
-  {% else %}
-    <p>no matches</p>
-  {% endfor %}
+  <div
+    class="flex flex-wrap">
+
+    {% assign displayedIndex = 0 %}
+      {% for product in collection.products %}
+      {% assign displayedIndex = displayedIndex | plus: 1 %}
+
+      <!-- Determine border style based on displayed index -->
+      {% if displayedIndex == 1 or displayedIndex == 5 or displayedIndex == 9 %}
+        {% assign borderStyle = "border-l-0 border-t border-b border-r border-black" %}
+      {% elsif displayedIndex == 4 or displayedIndex == 8 or displayedIndex == 12 %}
+        {% assign borderStyle = "border-t border-b border-l border-r-0 border-black" %}
+      {% elsif displayedIndex <= 4 %}
+        {% assign borderStyle = "border-t border-b border-l border-r border-black" %}
+      {% elsif displayedIndex > 8 %}
+        {% assign borderStyle = "border-t border-b border-l border-r border-black" %}
+      {% else %}
+        {% assign borderStyle = "border-t border-b border-l border-r border-black" %}
+      {% endif %}
+
+      <!-- Each product item -->
+      <div
+        class="w-1/4 relative {{ borderStyle }}">
+        <a
+          href="{{ product.url | within: collection }}">
+          <img
+            src="{{ product.featured_image.src | img_url: 'large' }}"
+            alt="{{ product.featured_image.alt | escape }}"
+            class="w-full">
+          <div
+            class="absolute top-0 left-0 text-black p-1">{{ product.title }} - {{ product.price | money }}</div>
+        </a>
+        {% unless product.available %}
+          <br><strong>sold out</strong>
+        {% endunless %}
+      </div>
+
+    {% else %}
+      <p>no matches</p>
+    {% endfor %}
+
+  </div>
+
   {% if paginate.pages > 1 %}
     {{ paginate | default_pagination }}
   {% endif %}
