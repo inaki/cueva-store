@@ -1,6 +1,10 @@
 <div
   class="flex flex-wrap gap-4">
   {% for collection in collections %}
+    {% if collection.handle == 'all' %}
+      {% continue %}
+    {% endif %}
+
     {% assign image_id = collection.handle | append: '_image' %}
     {% assign image_url = section.settings[image_id] | img_url: 'medium' %}
 
@@ -8,7 +12,8 @@
     {{ image_id }}: {{ image_url }}
 
     <!-- Each collection item -->
-    <div class="collection-item relative w-1/3 bg-cover bg-center"
+    <div
+      class="collection-item relative w-1/3 bg-cover bg-center"
       style="background-image: url('{{ image_url }}')">
       <!-- Collection title -->
       <h2
@@ -18,6 +23,7 @@
     </div>
   {% endfor %}
 </div>
+
 
 
 {% schema %}
