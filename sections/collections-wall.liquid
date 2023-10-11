@@ -5,7 +5,7 @@
     <!-- Each collection item -->
     <div
       class="collection-item relative w-1/4 bg-cover bg-center"
-      style="background-image: url('{{ collection.image_url }}')">
+      style="background-image: url('{{ section.settings.image_path}}{{collection.title}}')">
 
       <!-- Collection title -->
       <h2
@@ -25,7 +25,7 @@
     "settings": [
       {
         "type": "image_picker",
-        "id": "basics_image",
+        "id": "basics",
         "label": "Basics Image"
       },
       {
@@ -35,7 +35,7 @@
       },
       {
         "type": "image_picker",
-        "id": "beach_image",
+        "id": "beach",
         "label": "Beach Image"
       },
       {
@@ -44,15 +44,15 @@
         "label": "Beach Link"
       }, {
         "type": "image_picker",
-        "id": "bodysuites_image",
+        "id": "bodysuites",
         "label": "bodysuites Image"
       }, {
         "type": "url",
-        "id": "bodysuites_link",
+        "id": "bodysuites",
         "label": "bodysuites Link"
       }, {
         "type": "image_picker",
-        "id": "bottoms_image",
+        "id": "bottoms",
         "label": "bottoms Image"
       }, {
         "type": "url",
@@ -60,7 +60,7 @@
         "label": "bottoms Link"
       }, {
         "type": "image_picker",
-        "id": "crop_tops_image",
+        "id": "crop_tops",
         "label": "crop tops Image"
       }, {
         "type": "url",
@@ -68,7 +68,7 @@
         "label": "crop tops Link"
       }, {
         "type": "image_picker",
-        "id": "dresses_image",
+        "id": "dresses",
         "label": "dresses Image"
       }, {
         "type": "url",
@@ -76,7 +76,7 @@
         "label": "dresses Link"
       }, {
         "type": "image_picker",
-        "id": "new_image",
+        "id": "new",
         "label": "new Image"
       }, {
         "type": "url",
@@ -84,7 +84,7 @@
         "label": "new Link"
       }, {
         "type": "image_picker",
-        "id": "pants_image",
+        "id": "pants",
         "label": "pants Image"
       }, {
         "type": "url",
@@ -92,7 +92,7 @@
         "label": "pants Link"
       }, {
         "type": "image_picker",
-        "id": "skirts_image",
+        "id": "skirts",
         "label": "skirts Image"
       }, {
         "type": "url",
@@ -100,7 +100,7 @@
         "label": "skirts Link"
       }, {
         "type": "image_picker",
-        "id": "tie_dye_image",
+        "id": "tie_dye",
         "label": "tie-dye Image"
       }, {
         "type": "url",
@@ -108,7 +108,7 @@
         "label": "tie-dye Link"
       }, {
         "type": "image_picker",
-        "id": "tops_image",
+        "id": "tops",
         "label": "tops Image"
       }, {
         "type": "url",
@@ -116,7 +116,7 @@
         "label": "tops Link"
       }, {
         "type": "image_picker",
-        "id": "turtleneck_image",
+        "id": "turtleneck",
         "label": "turtleneck Image"
       }, {
         "type": "url",
