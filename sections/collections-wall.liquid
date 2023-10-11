@@ -4,7 +4,7 @@
     class="flex flex-wrap space-x-[-1px]">
 
     {% for collection in collections %}
-      {% if collection.handle == 'all' %}
+      {% if collection.handle == 'all' or collection.handle == 'home' %}
         {% continue %}
       {% endif %}
 
@@ -54,7 +54,7 @@
         "label": "Beach Link"
       }, {
         "type": "image_picker",
-        "id": "bodysuites_image",
+        "id": "bodysuits_image",
         "label": "bodysuites Image"
       }, {
         "type": "url",
@@ -70,11 +70,11 @@
         "label": "bottoms Link"
       }, {
         "type": "image_picker",
-        "id": "crop_tops_image",
+        "id": "crop-tops_image",
         "label": "crop tops Image"
       }, {
         "type": "url",
-        "id": "crop_tops_link",
+        "id": "crop-tops_link",
         "label": "crop tops Link"
       }, {
         "type": "image_picker",
@@ -110,11 +110,11 @@
         "label": "skirts Link"
       }, {
         "type": "image_picker",
-        "id": "tie_dye_image",
+        "id": "tie-dye_image",
         "label": "tie-dye Image"
       }, {
         "type": "url",
-        "id": "tie_dye_link",
+        "id": "tie-dye_link",
         "label": "tie-dye Link"
       }, {
         "type": "image_picker",
