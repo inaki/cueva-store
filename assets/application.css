@@ -802,6 +802,10 @@ video {
   border-width: 1px;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -812,6 +816,18 @@ video {
 
 .border-t {
   border-top-width: 1px;
+}
+
+.border-r-0 {
+  border-right-width: 0px;
+}
+
+.border-l-0 {
+  border-left-width: 0px;
+}
+
+.border-l {
+  border-left-width: 1px;
 }
 
 .border-black {

@@ -1,23 +1,35 @@
 <section>
   <h1>Collections</h1>
   <div
-    class="flex flex-wrap space-x-[-1px]">
+    class="flex flex-wrap ">
 
-    {% for collection in collections %}
-      {% if collection.handle == 'all' %}
+    {% assign displayedIndex = 0 %}
+      {% for collection in collections %}
+      {% if collection.handle == 'all' or collection.title == 'home' %}
         {% continue %}
       {% endif %}
 
-      {% if collection.title == 'home' %}
-        {% continue %}
-      {% endif %}
+      {% assign displayedIndex = displayedIndex | plus: 1 %}
 
       {% assign image_id = collection.handle | append: '_image' %}
       {% assign image_url = section.settings[image_id] | img_url: 'medium' %}
 
+      <!-- Determine border style based on displayed index -->
+      {% if displayedIndex == 1 or displayedIndex == 5 or displayedIndex == 9 %}
+        {% assign borderStyle = "border-l-0 border-t border-b border-r border-black" %}
+      {% elsif displayedIndex == 4 or displayedIndex == 8 or displayedIndex == 12 %}
+        {% assign borderStyle = "border-t border-b border-l border-r-0 border-black" %}
+      {% elsif displayedIndex <= 4 %}
+        {% assign borderStyle = "border-t border-b border-l border-r border-black" %}
+      {% elsif displayedIndex > 8 %}
+        {% assign borderStyle = "border-t border-b border-l border-r border-black" %}
+      {% else %}
+        {% assign borderStyle = "border-t border-b border-l border-r border-black" %}
+      {% endif %}
+
       <!-- Each collection item -->
       <div
-        class="w-1/4 relative border border-black">
+        class="w-1/4 relative {{ borderStyle }}">
         <img
         src="{{ image_url }}"
           alt="{{ collection.title }}"
@@ -27,11 +39,10 @@
           href="{{ collection.url }}"
           class="absolute top-0 left-0 text-black p-1">{{ collection.title }}</a>
       </div>
+
     {% endfor %}
   </div>
 </section>
-
-
 
 {% schema %}
   {
