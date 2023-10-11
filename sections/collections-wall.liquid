@@ -1,27 +1,31 @@
-<div
-  class="flex flex-wrap">
-  {% for collection in collections %}
-    {% if collection.handle == 'all' %}
-      {% continue %}
-    {% endif %}
+<section>
+  <h1>Collections</h1>
+  <div
+    class="flex flex-wrap space-x-[-1px]">
 
-    {% assign image_id = collection.handle | append: '_image' %}
-    {% assign image_url = section.settings[image_id] | img_url: 'medium' %}
+    {% for collection in collections %}
+      {% if collection.handle == 'all' %}
+        {% continue %}
+      {% endif %}
 
-    <!-- Each collection item -->
-    <div
-      class="w-1/4 relative">
-      <img
-      src="{{ image_url }}"
-        alt="{{ collection.title }}"
-        class="w-full">
-      <!-- Collection title -->
-      <a
-        href="{{ collection.url }}"
-        class="absolute top-0 left-0 bg-white text-black p-1">{{ collection.title }}</a>
-    </div>
-  {% endfor %}
-</div>
+      {% assign image_id = collection.handle | append: '_image' %}
+      {% assign image_url = section.settings[image_id] | img_url: 'medium' %}
+
+      <!-- Each collection item -->
+      <div
+        class="w-1/4 relative border border-black">
+        <img
+        src="{{ image_url }}"
+          alt="{{ collection.title }}"
+          class="w-full">
+        <!-- Collection title -->
+        <a
+          href="{{ collection.url }}"
+          class="absolute top-0 left-0 text-black p-1">{{ collection.title }}</a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
 
 
 
