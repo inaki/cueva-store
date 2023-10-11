@@ -8,9 +8,6 @@
     {% assign image_id = collection.handle | append: '_image' %}
     {% assign image_url = section.settings[image_id] | img_url: 'medium' %}
 
-    <!-- Debugging output -->
-    {{ image_id }}: {{ image_url }}
-
     <!-- Each collection item -->
     <div
       class="collection-item relative w-1/3 bg-cover bg-center"
