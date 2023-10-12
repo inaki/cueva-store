@@ -7,48 +7,48 @@
     <h1
       class="text-left mb-4">{{ product.title }}</h1>
 
-    <!-- Size Select -->
-    <label
-      for="productSize"
-      class="block text-left mb-2">Size</label>
-    <select
-      name="size"
-      id="productSize"
-      class="mb-4 w-full">
-      {% for option in product.options_with_values %}
-        {% if option.name == 'Size' %}
-          {% for value in option.values %}
-            <option
-              value="{{ value }}">{{ value }}</option>
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
-    </select>
-
-    <!-- Color Select -->
-    <label
-      for="productColor"
-      class="block text-left mb-2">Color</label>
-    <select
-      name="color"
-      id="productColor"
-      class="mb-4 w-full">
-      {% for option in product.options_with_values %}
-        {% if option.name == 'Color' %}
-          {% for value in option.values %}
-            <option
-              value="{{ value }}">{{ value }}</option>
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
-    </select>
-
     <!-- Product Form and Details -->
     <form
       action="/cart/add"
       method="post"
       enctype="multipart/form-data"
       id="AddToCartForm">
+
+      <!-- Size Select -->
+      <label
+        for="productSize"
+        class="block text-left mb-2">Size</label>
+      <select
+        name="size"
+        id="productSize"
+        class="mb-4 w-full">
+        {% for option in product.options_with_values %}
+          {% if option.name == 'Size' %}
+            {% for value in option.values %}
+              <option
+                value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </select>
+
+      <!-- Color Select -->
+      <label
+        for="productColor"
+        class="block text-left mb-2">Color</label>
+      <select
+        name="color"
+        id="productColor"
+        class="mb-4 w-full">
+        {% for option in product.options_with_values %}
+          {% if option.name == 'Color' %}
+            {% for value in option.values %}
+              <option
+                value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </select>
 
       <div
         class="mb-4 text-left">{{ current_variant.price | money }}</div>
@@ -69,7 +69,7 @@
         class="bg-blue-500 text-white px-4 py-2 rounded w-full">Add to cart</button>
     </form>
     <div
-      class="mt-8 text-left">{{ product.description }}</div>
+      class="text-left mt-8">{{ product.description }}</div>
 
   </div>
 
