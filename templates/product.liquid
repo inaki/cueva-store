@@ -1,53 +1,78 @@
 <div class="flex">
 
-  <!-- Left Column: Product Details -->
+  <!-- Left Column: Product Details, Back Image, Size, and Color Selects -->
   <div
-    class="w-1/2 pl-8 flex-shrink-0 flex-grow-0">
-    <h1>{{ product.title }}</h1>
+    class="w-1/2 p-8 flex-shrink-0 flex-grow-0">
+
+    <h1
+      class="text-left mb-4">{{ product.title }}</h1>
+
+    <!-- Size Select -->
+    <label
+      for="productSize"
+      class="block text-left mb-2">Size</label>
+    <select
+      name="size"
+      id="productSize"
+      class="mb-4 w-full">
+      {% for option in product.options_with_values %}
+        {% if option.name == 'Size' %}
+          {% for value in option.values %}
+            <option
+              value="{{ value }}">{{ value }}</option>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </select>
+
+    <!-- Color Select -->
+    <label
+      for="productColor"
+      class="block text-left mb-2">Color</label>
+    <select
+      name="color"
+      id="productColor"
+      class="mb-4 w-full">
+      {% for option in product.options_with_values %}
+        {% if option.name == 'Color' %}
+          {% for value in option.values %}
+            <option
+              value="{{ value }}">{{ value }}</option>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </select>
+
+    <!-- Product Form and Details -->
     <form
       action="/cart/add"
       method="post"
       enctype="multipart/form-data"
       id="AddToCartForm">
-      <select
-        name="id"
-        id="productSelect"
-        class="mb-4">
-        {% for variant in product.variants %}
-          {% if variant.available %}
-            <option
-              value="{{ variant.id }}">
-              {{ variant.title }} - {{ variant.price | money_with_currency }}
-            </option>
-          {% else %}
-            <option
-              disabled="disabled">
-              {{ variant.title }} - sold out
-            </option>
-          {% endif %}
-        {% endfor %}
-      </select>
+
       <div
-        class="mb-4">{{ current_variant.price | money }}</div>
+        class="mb-4 text-left">{{ current_variant.price | money }}</div>
       <label
         for="Quantity"
-        class="block mb-2">Quantity</label>
+        class="block text-left mb-2">Quantity</label>
       <input
         type="number"
         id="Quantity"
         name="quantity"
         value="1"
         min="1"
-        class="mb-4">
+        class="mb-4 w-full">
       <button
         type="submit"
         name="add"
         id="AddToCart"
-        class="bg-blue-500 text-white px-4 py-2 rounded">Add to cart</button>
+        class="bg-blue-500 text-white px-4 py-2 rounded w-full">Add to cart</button>
     </form>
     <div
-      class="mt-8">{{ product.description }}</div>
+      class="mt-8 text-left">{{ product.description }}</div>
+
   </div>
+
 
   <!-- Right Column: Product Images -->
   <div class="w-1/2 flex-shrink-0 flex-grow-0 relative">
@@ -55,15 +80,6 @@
     <div
       class="swiper-container max-w-full overflow-hidden relative">
       <div class="swiper-wrapper">
-
-        <!-- Featured Product Image -->
-        <div
-          class="swiper-slide">
-          <img
-            src="{{ featured_image | img_url: 'large' }}"
-            alt="{{ featured_image.alt | escape }}"
-            class="w-full">
-        </div>
 
         <!-- Additional Product Images -->
         {% for image in product.images %}
